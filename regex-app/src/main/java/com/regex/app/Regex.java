@@ -9,5 +9,10 @@ public class Regex {
     public boolean matchAnyButNewLine(String input){
         return true;
     }
-    
+
+//    You have a test string. Your task is to match the pattern xxXxxXxxxx
+//    Here x denotes a digit character, and X denotes a non-digit character.
+    public boolean matchDigitsAndNonDigits(String input){
+        return true;
+    }
 }
