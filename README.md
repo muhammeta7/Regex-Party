@@ -4,9 +4,9 @@ Regex practice
 ## Notes
 
 #### Match Anything but New Line
-The dot (.) matches anything (except for a newline).
-Note: If you want to match (.) in the test string, 
-you need to escape the dot by using a slash \..
+The dot `.` matches anything (except for a newline).
+Note: If you want to match `.` in the test string, 
+you need to escape the dot by using a slash `\..`
 
 #### Match Digits & Non-Digit Characters
 * The expression `\\d` matches any digit `0-9`.
