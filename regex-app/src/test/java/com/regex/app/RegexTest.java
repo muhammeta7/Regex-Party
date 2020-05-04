@@ -131,4 +131,34 @@ public class RegexTest {
         assertFalse(regex.excludeSpecificCharacters(input3));
         assertFalse(regex.excludeSpecificCharacters(input4));
     }
+
+    @Test
+    public void rangesTest(){
+        String input1 = "h4CkR";
+        String input2 = "a3AbC";
+        String input3 ="t7QdTabc";
+        String input4 = "abcdef";
+        String input5 = "1h4kk529";
+
+        assertTrue(regex.ranges(input1));
+        assertTrue(regex.ranges(input2));
+        assertFalse(regex.ranges(input3));
+        assertFalse(regex.ranges(input4));
+        assertFalse(regex.ranges(input5));
+    }
+
+    @Test
+    public void oneOrMoreTest(){
+        String input1 = "1234ABCSabc";
+        String input2 = "1Qa";
+        String input3 ="23Qaaa";
+        String input4 = "abcdef";
+        String input5 = "1h4kk529";
+
+        assertTrue(regex.oneOrMore(input1));
+        assertTrue(regex.oneOrMore(input2));
+        assertTrue(regex.oneOrMore(input3));
+        assertFalse(regex.oneOrMore(input4));
+        assertFalse(regex.oneOrMore(input5));
+    }
 }

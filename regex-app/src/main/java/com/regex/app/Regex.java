@@ -54,4 +54,23 @@ public class Regex {
     public boolean excludeSpecificCharacters(String input){
         return true;
     }
+
+    // Match pattern with following criteria.
+    // Length of string must be at least 5 or more
+    // First character must be lowercase
+    // Second character must be positive digit
+    // Zero is not considered positive or negative
+    // Third character must not be lowercase
+    // Fourth character not be uppercase
+    // Fifth character must be uppercase English character
+    public boolean ranges(String input){
+        return true;
+    }
+
+    // Pattern should begin with 1 or more digits
+    // After that should have 1 or more uppercase letters
+    // Should end with one or more lowercase letters
+    public boolean oneOrMore(String input){
+        return true;
+    }
 }

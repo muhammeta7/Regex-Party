@@ -47,3 +47,9 @@ The `[ ]` matches only one out of the characters inside square brackets.
 
 #### Excluding Specific Characters
 `[^]` negated class matches any character that is not in square brackets.
+
+#### Matching Character Ranges
+`[a-z] [A-Z] [0-9]` indicates a range
+
+#### Matching repetitions
+`+` matches one or more repetitions of character, class, or group
