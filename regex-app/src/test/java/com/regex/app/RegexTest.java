@@ -60,6 +60,75 @@ public class RegexTest {
 
     @Test
     public void matchingWordTest(){
+        String input1 = "www.hackerrank.com";
+        String input2 = "www.plainpizza.com";
+        String input3 = "www.sharktanks.com";
+        String input4 = "ay.gopro.thing";
+        String input5 = "12.12345.5678";
 
+        assertTrue(regex.matchingWord(input1));
+        assertTrue(regex.matchingWord(input2));
+        assertTrue(regex.matchingWord(input3));
+        assertFalse(regex.matchingWord(input4));
+        assertFalse(regex.matchingWord(input5));
+    }
+
+    @Test
+    public void startAndEndTest(){
+        String input1 = "1some.";
+        String input2 = "0qwer.";
+        String input3 = "a4758?";
+        String input4 = "abcdef";
+
+        String[] strings = {input1, input2, input3, input4};
+        int expected = 6;
+        for(String s: strings){
+            assertEquals(expected, s.length());
+        }
+
+        assertTrue(regex.startAndEnd(input1));
+        assertTrue(regex.startAndEnd(input2));
+        assertFalse(regex.startAndEnd(input3));
+        assertFalse(regex.startAndEnd(input4));
+    }
+
+    @Test
+    public void matchSpecificCharactersTest(){
+        String input1 = "1203x.";
+        String input2 = "20x3s,";
+        String input3 = "11xAu.";
+        String input4 = "abcdefg";
+        String input5 = "AB356.";
+
+        String[] strings = {input1, input2, input3, input4, input5};
+        int expected = 6;
+        for(String s: strings){
+            assertEquals(expected, s.length());
+        }
+
+        assertTrue(regex.matchSpecificCharacters(input1));
+        assertTrue(regex.matchSpecificCharacters(input2));
+        assertTrue(regex.matchSpecificCharacters(input3));
+        assertFalse(regex.matchSpecificCharacters(input4));
+        assertFalse(regex.matchSpecificCharacters(input5));
+    }
+
+    @Test
+    public void excludeSpecificCharactersTest(){
+        String input1 = "think?";
+        String input2 = "stink!";
+        String input3 = "0ab A.";
+        String input4 = "2eD I,";
+
+        String[] strings = {input1, input2, input3, input4};
+        int expected = 6;
+        for(String s: strings){
+            assertEquals(expected, s.length());
+        }
+
+        assertTrue(regex.excludeSpecificCharacters(input1));
+        assertTrue(regex.excludeSpecificCharacters(input2));
+        assertFalse(regex.excludeSpecificCharacters(input3));
+        assertFalse(regex.excludeSpecificCharacters(input4));
     }
 }
