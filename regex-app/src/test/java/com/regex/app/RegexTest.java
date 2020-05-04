@@ -148,6 +148,47 @@ public class RegexTest {
     }
 
     @Test
+    public void repetitionsTest(){
+        String input1 = "aA24Bz1 3 ";
+        String input2 = "2Bzxy67 59";
+        String input3 = "3b hsQ8462";
+        String input4 = "ABC793    ";
+
+        assertTrue(regex.repetitions(input1));
+        assertTrue(regex.repetitions(input2));
+        assertFalse(regex.repetitions(input3));
+        assertFalse(regex.repetitions(input4));
+    }
+
+    @Test
+    public void rangeRepetitionsTest(){
+        String input1 = "22aBc.";
+        String input2 = "12abCDeFGhij...";
+        String input3 = "3threeormorealphabets8";
+        String input4 = "43hahahhahaha...........";
+
+        assertTrue(regex.rangeRepetitions(input1));
+        assertTrue(regex.rangeRepetitions(input2));
+        assertFalse(regex.rangeRepetitions(input3));
+        assertFalse(regex.rangeRepetitions(input4));
+    }
+
+    @Test
+    public void zeroOrMoreTest(){
+        String input1 = "27";
+        String input2 = "12345a";
+        String input3 = "12A";
+        String input4 = "1absA";
+        String input5 = "23Aa";
+
+        assertTrue(regex.zeroOrMore(input1));
+        assertTrue(regex.zeroOrMore(input2));
+        assertTrue(regex.zeroOrMore(input3));
+        assertFalse(regex.zeroOrMore(input4));
+        assertFalse(regex.zeroOrMore(input5));
+    }
+
+    @Test
     public void oneOrMoreTest(){
         String input1 = "1234ABCSabc";
         String input2 = "1Qa";
@@ -160,5 +201,18 @@ public class RegexTest {
         assertTrue(regex.oneOrMore(input3));
         assertFalse(regex.oneOrMore(input4));
         assertFalse(regex.oneOrMore(input5));
+    }
+
+    @Test
+    public void endsWithTest(){
+        String input1 = "Kites";
+        String input2 = "zipCoDERs";
+        String input3 = "234556s";
+        String input4 = "abcDEFghz";
+
+        assertTrue(regex.endsWith(input1));
+        assertTrue(regex.endsWith(input2));
+        assertFalse(regex.endsWith(input3));
+        assertFalse(regex.endsWith(input4));
     }
 }

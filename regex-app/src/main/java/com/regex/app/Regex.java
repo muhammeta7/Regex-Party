@@ -67,10 +67,39 @@ public class Regex {
         return true;
     }
 
+    // Pattern must have length of 10.
+    // First 6 characters should consist of letters (case insensitive)
+    // Or Even digits (Zero counts as even in this case)
+    // Last 4 characters can be either odd digits (1 counts) or whitespace characters
+    public boolean repetitions(String input){
+        return true;
+    }
+
+    // Pattern should begin with 1 or 2 digits
+    // After that should have 3 or more letters (case insensitive)
+    // Should end with 0-3 . (periods)
+    public boolean rangeRepetitions(String input){
+        return true;
+    }
+
+    // Pattern should begin with 2 or more digits
+    // After that sting should have 0 or more lowercase letters
+    // Should end with 0 or more uppercase letters
+    public boolean zeroOrMore(String input){
+        return true;
+    }
+
     // Pattern should begin with 1 or more digits
     // After that should have 1 or more uppercase letters
     // Should end with one or more lowercase letters
     public boolean oneOrMore(String input){
         return true;
     }
+
+    // String should only contain upper and lowercase letters
+    // String should end in s
+    public boolean endsWith(String input){
+        return true;
+    }
+
 }
