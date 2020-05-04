@@ -44,4 +44,22 @@ public class RegexTest {
         assertFalse(regex.matchAnyButNewLine(input5));
         assertTrue(regex.matchDigitsAndNonDigits(input6));
     }
+
+    @Test
+    public void whiteSpaceTest(){
+        String input1 = "12 11 15";
+        String input2 = "Ey Yo Man";
+        String input3 = "123 123 123";
+        String input4 = "hey dude no";
+
+        assertTrue(regex.whiteSpace(input1));
+        assertTrue(regex.whiteSpace(input2));
+        assertFalse(regex.whiteSpace(input3));
+        assertFalse(regex.whiteSpace(input4));
+    }
+
+    @Test
+    public void matchingWordTest(){
+
+    }
 }
