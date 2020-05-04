@@ -102,4 +102,23 @@ public class Regex {
         return true;
     }
 
+    // String should match word starting with vowel(case insensitive)
+    // Can be any length. Word should consist of only letters (case insensitive)
+    // Should start and end with word boundary
+    public boolean wordBoundary(String input){
+        return true;
+    }
+
+    // Match for 3 consecutive repetitions of ok (okokok)
+    public boolean capturingGroup(String pattern){
+        return true;
+    }
+
+    // Match s must start with Mr. Mrs. Ms. Dr. or Er.
+    // Rest of string must contain only one or more alphabetic letters (upper and lowercase)
+    public boolean alternativeMatching(String input){
+        return true;
+    }
+
+
 }

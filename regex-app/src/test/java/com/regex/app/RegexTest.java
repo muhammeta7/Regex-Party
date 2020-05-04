@@ -215,4 +215,30 @@ public class RegexTest {
         assertFalse(regex.endsWith(input3));
         assertFalse(regex.endsWith(input4));
     }
+
+    @Test
+    public void wordBoundaryTest(){
+        assertTrue(regex.wordBoundary("Find any matches?"));
+        assertTrue(regex.wordBoundary("okyouwin? yes"));
+        assertFalse(regex.wordBoundary("123 345 678"));
+        assertFalse(regex.wordBoundary("?@ 123 b1234"));
+    }
+
+    @Test
+    public void capturingGroupTest(){
+        assertTrue(regex.capturingGroup("okokok!2344 should pass"));
+        assertTrue(regex.capturingGroup("also this is okokok."));
+        assertFalse(regex.capturingGroup("Nah nah nah ok ok ok"));
+        assertFalse(regex.capturingGroup("Almost okok but missing 1 ok"));
+    }
+
+    @Test
+    public void alternativeMatchingTest(){
+        assertTrue(regex.alternativeMatching("Mr.Krabs"));
+        assertTrue(regex.alternativeMatching("Dr.Phil"));
+        assertFalse(regex.alternativeMatching("Mr."));
+        assertFalse(regex.alternativeMatching("Mr#Man"));
+        assertFalse(regex.alternativeMatching("Miss.Daisy"));
+        assertFalse(regex.alternativeMatching("Mr.VKDoshi"));
+    }
 }
