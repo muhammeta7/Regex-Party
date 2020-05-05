@@ -97,3 +97,26 @@ you need to escape the dot by using a slash `\..`
 ##### Examples
 * `(Bob|Kevin|Stuart)` will match either Bob or Kevin or Stuart
 * `([a-f]|[A-F])` will match any of the following characters: a, b, c, d, e, f, A, B, C, D, E, or F.
+
+#### Matching Same Text Again & Again
+* Tool (\\1 references first capturing group) matches same text as previously matches by capturing group
+* `(\\d)\\1` can match 00,11,22,333,44,55,66,77,88,99
+
+#### Back References to Failed Groups
+Backreference to a capturing group that match nothing is different  <br />
+from back reference to a capturing group that did not participate in the match at all
+* `(b?)o\\1` 
+    * where `b?` is optional and matches nothing
+    * `(b?)` is successfully matched and capture nothing
+    * o is matched with o and \\1 
+* `(b)?o\\1`
+    * Here `(b)` fails to match at all. Since whole group is optional it does proceed to match o
+    * Enginer now arrives `\\1` which references a group that did not participate in match attempt at all
+    * Thus backreference fails to match
+    
+#### Forward References
+Forward references creates a back reference to a regex that will appear later
+<br /> Forward references are only useful if they're inside a repeated group
+* `(\\2amigo|(go!))+` will match `go!go!amigo`
+
+

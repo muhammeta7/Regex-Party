@@ -120,5 +120,29 @@ public class Regex {
         return true;
     }
 
+    // String must be length of 20
+    // 1st character must be lowercase letter. 2nd character must be word character
+    // 3rd character is whitespace character. 4th character is non-word character
+    // 5th character is digit. 6th character is non-digit
+    // 7th character uppercase letter. 8th is letter(case-insensitive)
+    // 9th character is vowel. 10th character is non-whitespace character
+    // 11th should match 1st. 12th should match 2nd
+    // 13th should match 3rd. 14th 4th...you get the point
+    public boolean matchSameText(String input){
+        return true;
+    }
 
+    // String consists of 8 digits
+    // Must have "-" separator such that string is divided in 4 parts
+    // Each part having exactly two digits 12-34-56-78
+    public boolean backReferences(String input){
+        return true;
+    }
+
+    // String that consists of tic or tac
+    // tic should not be immediate neighbor of itself
+    // tic must occur only when tac has appeared at least twice before
+    public boolean forwardReference(String input){
+        return true;
+    }
 }

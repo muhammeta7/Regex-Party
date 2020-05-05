@@ -241,4 +241,29 @@ public class RegexTest {
         assertFalse(regex.alternativeMatching("Miss.Daisy"));
         assertFalse(regex.alternativeMatching("Mr.VKDoshi"));
     }
+
+    @Test
+    public void matchSomeTextTest(){
+        assertTrue(regex.matchSameText("ab #1?AZa$ab #1?AZa$"));
+        assertTrue(regex.matchSameText("af &3ABaekaf &3ABaek"));
+        assertFalse(regex.matchSameText("Ac 34bAnekAc 34bAnek"));
+        assertFalse(regex.matchSameText("qwe"));
+    }
+
+    @Test
+    public void backReference(){
+        assertTrue(regex.backReferences("12345678"));
+        assertTrue(regex.backReferences("12-34-56-78"));
+        assertFalse(regex.backReferences("123-45-678"));
+        assertFalse(regex.backReferences("12-45-678-3"));
+    }
+
+    @Test
+    public void forwardReference(){
+        assertTrue(regex.forwardReference("tactactic"));
+        assertTrue(regex.forwardReference("tactactictactactic"));
+        assertFalse(regex.forwardReference("tactic"));
+        assertFalse(regex.forwardReference("tactictactic"));
+        assertFalse(regex.forwardReference("tactactactictactictic"));
+    }
 }
