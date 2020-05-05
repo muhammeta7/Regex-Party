@@ -1,7 +1,6 @@
 package com.regex.app;
 
 import static org.junit.Assert.*;
-
 import org.junit.Before;
 import org.junit.Test;
 
@@ -251,7 +250,7 @@ public class RegexTest {
     }
 
     @Test
-    public void backReference(){
+    public void backReferenceTest(){
         assertTrue(regex.backReferences("12345678"));
         assertTrue(regex.backReferences("12-34-56-78"));
         assertFalse(regex.backReferences("123-45-678"));
@@ -259,11 +258,34 @@ public class RegexTest {
     }
 
     @Test
-    public void forwardReference(){
+    public void forwardReferenceTest(){
         assertTrue(regex.forwardReference("tactactic"));
         assertTrue(regex.forwardReference("tactactictactactic"));
         assertFalse(regex.forwardReference("tactic"));
         assertFalse(regex.forwardReference("tactictactic"));
         assertFalse(regex.forwardReference("tactactactictactictic"));
     }
+
+    @Test
+    public void positiveLookAheadTest(){
+        int input1 = regex.positiveLookAhead("gooooo");
+        int input2 = regex.positiveLookAhead("gooogooo");
+        int input3 = regex.positiveLookAhead("yoyoooyooobewhooorooo");
+        assertEquals(input1, 3);
+        assertEquals(input2, 2);
+        assertEquals(input3, 4);
+    }
+
+    @Test
+    public void negativeLookAheadTest(){
+        int input1 = regex.negativeLookAhead("gooooo");
+        int input2 = regex.negativeLookAhead("yoyoyo12");
+        int input3 = regex.negativeLookAhead("abcd123");
+        int input4 = regex.negativeLookAhead("appooo11");
+        assertEquals(input1, 2);
+        assertEquals(input2, 8);
+        assertEquals(input3, 7);
+        assertEquals(input4, 4);
+    }
+
 }

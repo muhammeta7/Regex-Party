@@ -145,4 +145,24 @@ public class Regex {
     public boolean forwardReference(String input){
         return true;
     }
+
+    // Return number of occurrences of o followed immediately by oo
+    public int positiveLookAhead(String input){
+        return 1;
+    }
+
+    // Match all characters which are not immediately followed by that same character
+    // Example: If string gooooo. The first g is not followed by a g
+    // and last o is not followed by o
+    public int negativeLookAhead(String input){
+        return 1;
+    }
+
+    // Write a regex which can match all the
+    // occurences of digit which are immediately
+    // preceded by odd digit.
+    public int positiveLookBehind(String input){
+        return 1;
+    }
+
 }

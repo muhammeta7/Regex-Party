@@ -116,7 +116,24 @@ from back reference to a capturing group that did not participate in the match a
     
 #### Forward References
 Forward references creates a back reference to a regex that will appear later
-<br /> Forward references are only useful if they're inside a repeated group
+<br />Forward references are only useful if they're inside a repeated group
 * `(\\2amigo|(go!))+` will match `go!go!amigo`
 
+#### Positive Lookahead
+`regex_1(?=regex_2)` <br />
+The positive lookahead `(?=)` asserts regex_1 to be immediately followed by regex_2.<br /> 
+The lookahead is excluded from the match. It does not return matches of regex_2.<br />  
+The lookahead only asserts whether a match is possible or not.
 
+#### Negative Lookahead
+`regex_1(?!regex_2)`
+The negative lookahead `(?!)` asserts regex_1 not to be immediately followed by regex_2.
+<br />Lookahead is excluded from match(do not consume matches of regex_2)
+<br />but only assert whether a match is possible or not.
+ 
+#### Positive Lookbehind
+`(?<=regex_2)regex_1`
+The positive lookbehind `(?<=)` asserts regex_1 to be immediately<br />
+preceded by regex_2. Lookbehind is excluded from the match<br /> 
+(do not consume matches of regex_2)<br />
+but only assert whether a match is possible or not.
