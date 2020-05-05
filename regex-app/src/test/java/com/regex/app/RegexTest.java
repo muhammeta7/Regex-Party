@@ -288,4 +288,27 @@ public class RegexTest {
         assertEquals(input4, 4);
     }
 
+    @Test
+    public void positiveLookBehindTest(){
+        int input1 = regex.positiveLookBehind("123Go!");
+        int input2 = regex.positiveLookBehind("12334567");
+        int input3 = regex.positiveLookBehind("app34dot78");
+        int input4 = regex.positiveLookBehind("224Yeah468");
+        assertEquals(input1, 1);
+        assertEquals(input2, 4);
+        assertEquals(input3, 2);
+        assertEquals(input4, 0);
+    }
+
+    @Test
+    public void negativeLookBehindTest(){
+        int input1 = regex.negativeLookBehind("lols");
+        int input2 = regex.negativeLookBehind("lalalal");
+        int input3 = regex.negativeLookBehind("heydude");
+        int input4 = regex.negativeLookBehind("EEEEE");
+        assertEquals(input1, 3);
+        assertEquals(input2, 4);
+        assertEquals(input3, 5);
+        assertEquals(input4, 1);
+    }
 }

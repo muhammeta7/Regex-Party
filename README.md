@@ -123,17 +123,28 @@ Forward references creates a back reference to a regex that will appear later
 `regex_1(?=regex_2)` <br />
 The positive lookahead `(?=)` asserts regex_1 to be immediately followed by regex_2.<br /> 
 The lookahead is excluded from the match. It does not return matches of regex_2.<br />  
-The lookahead only asserts whether a match is possible or not.
+The lookahead only asserts whether a match is possible or not.<br />
+Example: `n(?i)` will match the `n` in word animal bc `i` immediately proceeds it.
 
 #### Negative Lookahead
 `regex_1(?!regex_2)`
 The negative lookahead `(?!)` asserts regex_1 not to be immediately followed by regex_2.
 <br />Lookahead is excluded from match(do not consume matches of regex_2)
-<br />but only assert whether a match is possible or not.
+<br />but only assert whether a match is possible or not.<br />
+`c(?!o)` will match any c that isn't immediately followed by an o.<br />
+It will match the first c in chocolate but not the second.
  
 #### Positive Lookbehind
 `(?<=regex_2)regex_1`
 The positive lookbehind `(?<=)` asserts regex_1 to be immediately<br />
 preceded by regex_2. Lookbehind is excluded from the match<br /> 
-(do not consume matches of regex_2)<br />
-but only assert whether a match is possible or not.
+(do not consume matches of regex_2)but only assert whether a match is possible or not.<br />
+`(?<=[aeiou])\\d` will match any digit that is preceded by a vowel.<br />
+It will match the `4` in ap3ple4 but not the `3`
+
+#### Negative Lookbehind
+`(?<!regex_2)regex_1`
+The negative lookbehind (?<!) asserts regex_1 not to be immediately preceded by regex_2.<br />
+Lookbehind is excluded from the match (do not consume matches of regex_2)<br />
+but only assert whether a match is possible or not<br />
+`(?<![a-z][aeiou]` will match the `o` in word he3o but not the `h`
