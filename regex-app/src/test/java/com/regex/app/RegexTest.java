@@ -34,13 +34,12 @@ public class RegexTest {
         String input4 = "MM-DD-YYYY";
         String input5 = "This is not gonna work";
         String input6 = "10a10.2015452254";
-        String input7 = "11..11.2015";
 
-        assertTrue(regex.matchAnyButNewLine(input1));
-        assertTrue(regex.matchAnyButNewLine(input2));
-        assertTrue(regex.matchAnyButNewLine(input3));
-        assertFalse(regex.matchAnyButNewLine(input4));
-        assertFalse(regex.matchAnyButNewLine(input5));
+        assertTrue(regex.matchDigitsAndNonDigits(input1));
+        assertTrue(regex.matchDigitsAndNonDigits(input2));
+        assertTrue(regex.matchDigitsAndNonDigits(input3));
+        assertFalse(regex.matchDigitsAndNonDigits(input4));
+        assertFalse(regex.matchDigitsAndNonDigits(input5));
         assertTrue(regex.matchDigitsAndNonDigits(input6));
     }
 
