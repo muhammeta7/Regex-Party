@@ -164,11 +164,13 @@ public class RegexTest {
         String input2 = "12abCDeFGhij...";
         String input3 = "3threeormorealphabets8";
         String input4 = "43hahahhahaha...........";
+        String input5 = "5aZa";
 
         assertTrue(regex.rangeRepetitions(input1));
         assertTrue(regex.rangeRepetitions(input2));
         assertFalse(regex.rangeRepetitions(input3));
         assertFalse(regex.rangeRepetitions(input4));
+        assertTrue(regex.rangeRepetitions(input5));
     }
 
     @Test
