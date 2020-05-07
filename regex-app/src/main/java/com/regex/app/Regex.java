@@ -116,13 +116,17 @@ public class Regex {
 
     // Match for 3 consecutive repetitions of ok (okokok)
     public boolean capturingGroup(String pattern){
-        return true;
+        Pattern p = Pattern.compile("(okokok).*");
+        Matcher m = p.matcher(pattern);
+        return m.find();
     }
 
     // Match s must start with Mr. Mrs. Ms. Dr. or Er.
     // Rest of string must contain only one or more alphabetic letters (upper and lowercase)
     public boolean alternativeMatching(String input){
-        return true;
+        Pattern p = Pattern.compile("^(Mr\\.|Mrs\\.|Ms\\.|Dr\\.|Er\\.)[a-zA-Z]+$");
+        Matcher m = p.matcher(input);
+        return m.find();
     }
 
     // String must be length of 20
