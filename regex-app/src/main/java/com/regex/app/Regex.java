@@ -17,13 +17,13 @@ public class Regex {
     // Match the pattern XXxXXxXX
     // Here, x denotes whitespace characters, and X denotes non-white space characters.
     public boolean whiteSpace(String input){
-        return true;
+        return input.matches("\\S{2}\\s\\S{2}\\s\\S{2}");
     }
 
     // Match the pattern xxxXxxxxxxxxxxXxxx.
     // x denotes any word character and X denotes any non-word character
     public boolean matchingWord(String input){
-        return true;
+        return input.matches("\\w{3}\\W\\w{10}\\W\\w{3}");
     }
 
     // Match the pattern Xxxxx.
