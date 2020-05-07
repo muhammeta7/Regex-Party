@@ -5,13 +5,13 @@ public class Regex {
     // Match only and exactly strings of form: abc.def.ghi.jkx,
     // where each variable a,b,c,d,e,f,g,h,i,j,k,x can be any single character except the newline.
     public boolean matchAnyButNewLine(String input){
-        return true;
+        return input.matches("\\S{3}\\.\\S{3}\\.\\S{3}\\.\\S{3}");
     }
 
     // Match the pattern xxXxxXxxxx
     // Here x denotes a digit character, and X denotes a non-digit character.
     public boolean matchDigitsAndNonDigits(String input){
-        return true;
+        return input.matches("\\d{2}\\D\\d{2}\\D\\d{4}");
     }
 
     // Match the pattern XXxXXxXX
