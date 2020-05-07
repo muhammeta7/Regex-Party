@@ -52,7 +52,7 @@ public class Regex {
     // Fifth character should not be A,E,I,O,U
     // Sixth character should not be a . or a ,
     public boolean excludeSpecificCharacters(String input){
-        return true;
+        return input.matches("[^\\d][^aeiou][^bcDF][^\\s][^AEIOU][^.,]");
     }
 
     // Match pattern with following criteria.
@@ -64,7 +64,7 @@ public class Regex {
     // Fourth character not be uppercase
     // Fifth character must be uppercase English character
     public boolean ranges(String input){
-        return true;
+        return input.matches("[a-z][1-9][A-Z][a-z][A-Z]");
     }
 
     // Pattern must have length of 10.
@@ -72,21 +72,21 @@ public class Regex {
     // Or Even digits (Zero counts as even in this case)
     // Last 4 characters can be either odd digits (1 counts) or whitespace characters
     public boolean repetitions(String input){
-        return true;
+        return input.matches("[A-Za-z02468]{6}[13579\\s]{4}");
     }
 
     // Pattern should begin with 1 or 2 digits
     // After that should have 3 or more letters (case insensitive)
     // Should end with 0-3 . (periods)
     public boolean rangeRepetitions(String input){
-        return true;
+        return input.matches("\\d{1,2}[a-zA-Z]{3,}\\.{0,3}");
     }
 
     // Pattern should begin with 2 or more digits
-    // After that sting should have 0 or more lowercase letters
+    // After that string should have 0 or more lowercase letters
     // Should end with 0 or more uppercase letters
     public boolean zeroOrMore(String input){
-        return true;
+        return input.matches("\\d{2,}[a-z]*[A-Z]*");
     }
 
     // Pattern should begin with 1 or more digits
