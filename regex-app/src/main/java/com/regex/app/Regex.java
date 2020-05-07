@@ -31,7 +31,7 @@ public class Regex {
     // String must start with a digit X and end with a .
     // String should be only 6 characters long.
     public boolean startAndEnd(String input){
-        return true;
+        return input.matches("^\\d\\w{4}\\.$");
     }
 
     // Match the pattern with following criteria.
@@ -40,7 +40,7 @@ public class Regex {
     // Third character is x,s,0. Fourth character is 3,0,A or a
     // Fifth character x,s,u. Sixth character . or ,
     public boolean matchSpecificCharacters(String input){
-        return true;
+        return input.matches("[123][120][xs0][aA30][xsu][.,]$");
     }
 
     // Match pattern with following criteria.

@@ -95,7 +95,7 @@ public class RegexTest {
         String input1 = "1203x.";
         String input2 = "20x3s,";
         String input3 = "11xAu.";
-        String input4 = "abcdefg";
+        String input4 = "abcdef";
         String input5 = "AB356.";
 
         String[] strings = {input1, input2, input3, input4, input5};
