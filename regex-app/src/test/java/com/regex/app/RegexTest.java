@@ -46,7 +46,7 @@ public class RegexTest {
     @Test
     public void whiteSpaceTest(){
         String input1 = "12 11 15";
-        String input2 = "Ey Yo Man";
+        String input2 = "Ey Yo Ma";
         String input3 = "123 123 123";
         String input4 = "hey dude no";
 
