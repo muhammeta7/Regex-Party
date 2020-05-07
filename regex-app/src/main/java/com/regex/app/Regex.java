@@ -1,5 +1,8 @@
 package com.regex.app;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class Regex {
 
     // Match only and exactly strings of form: abc.def.ghi.jkx,
@@ -99,14 +102,16 @@ public class Regex {
     // String should only contain upper and lowercase letters
     // String should end in s
     public boolean endsWith(String input){
-        return true;
+        return input.matches("[a-zA-Z]+s$");
     }
 
     // String should match word starting with vowel(case insensitive)
     // Can be any length. Word should consist of only letters (case insensitive)
     // Should start and end with word boundary
     public boolean wordBoundary(String input){
-        return true;
+        Pattern p = Pattern.compile("\\b[aeiouAEIOU][A-Za-z]*\\b");
+        Matcher m = p.matcher(input);
+        return m.find();
     }
 
     // Match for 3 consecutive repetitions of ok (okokok)
