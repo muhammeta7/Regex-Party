@@ -40,7 +40,7 @@ public class RegexTest {
         assertTrue(regex.matchDigitsAndNonDigits(input3));
         assertFalse(regex.matchDigitsAndNonDigits(input4));
         assertFalse(regex.matchDigitsAndNonDigits(input5));
-        assertTrue(regex.matchDigitsAndNonDigits(input6));
+        assertFalse(regex.matchDigitsAndNonDigits(input6));
     }
 
     @Test
