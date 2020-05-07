@@ -93,7 +93,7 @@ public class Regex {
     // After that should have 1 or more uppercase letters
     // Should end with one or more lowercase letters
     public boolean oneOrMore(String input){
-        return true;
+        return input.matches("\\d+[A-Z]+[a-z]*");
     }
 
     // String should only contain upper and lowercase letters
