@@ -102,16 +102,16 @@ public class Regex {
         return true;
     }
 
+    // TODO For remaining exercises use Pattern and Matcher
     // String should match word starting with vowel(case insensitive)
     // Can be any length. Word should consist of only letters (case insensitive)
     // Should start and end with word boundary
-    // Hint: Use Patter and Matcher
     public boolean wordBoundary(String input){
         return true;
     }
 
     // Match for 3 consecutive repetitions of ok (okokok)
-    public boolean capturingGroup(String pattern){
+    public boolean capturingGroup(String input){
         return true;
     }
 

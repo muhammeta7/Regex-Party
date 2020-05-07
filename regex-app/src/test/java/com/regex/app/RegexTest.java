@@ -236,10 +236,10 @@ public class RegexTest {
     public void alternativeMatchingTest(){
         assertTrue(regex.alternativeMatching("Mr.Krabs"));
         assertTrue(regex.alternativeMatching("Dr.Phil"));
+        assertTrue(regex.alternativeMatching("Mr.VKDoshi"));
         assertFalse(regex.alternativeMatching("Mr."));
         assertFalse(regex.alternativeMatching("Mr#Man"));
         assertFalse(regex.alternativeMatching("Miss.Daisy"));
-        assertFalse(regex.alternativeMatching("Mr.VKDoshi"));
     }
 
     @Test
