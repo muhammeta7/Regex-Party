@@ -243,7 +243,7 @@ public class RegexTest {
     }
 
     @Test
-    public void matchSomeTextTest(){
+    public void matchSameTextTest(){
         assertTrue(regex.matchSameText("ab #1?AZa$ab #1?AZa$"));
         assertTrue(regex.matchSameText("af &3ABaekaf &3ABaek"));
         assertFalse(regex.matchSameText("Ac 34bAnekAc 34bAnek"));

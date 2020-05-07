@@ -138,45 +138,75 @@ public class Regex {
     // 11th should match 1st. 12th should match 2nd
     // 13th should match 3rd. 14th 4th...you get the point
     public boolean matchSameText(String input){
-        return true;
+        Pattern p = Pattern.compile("([a-z]\\w\\s\\W\\d\\D[A-Z][a-zA-Z][aieouAEIOU]\\S)\\1");
+        Matcher m = p.matcher(input);
+        return m.find();
     }
 
     // String consists of 8 digits
     // Must have "-" separator such that string is divided in 4 parts
     // Each part having exactly two digits 12-34-56-78
     public boolean backReferences(String input){
-        return true;
+        Pattern p = Pattern.compile("^\\d{2}(-?)(\\d{2}\\1){2}\\d{2}$");
+        Matcher m = p.matcher(input);
+        return m.find();
     }
 
     // String that consists of tic or tac
     // tic should not be immediate neighbor of itself
     // tic must occur only when tac has appeared at least twice before
     public boolean forwardReference(String input){
-        return true;
+        Pattern p = Pattern.compile("^(\\2tic|(tac))*$");
+        Matcher m = p.matcher(input);
+        return m.find();
     }
 
     // Return number of occurrences of o followed immediately by oo
     public int positiveLookAhead(String input){
-        return 1;
+        Pattern p = Pattern.compile("o(?=oo)");
+        Matcher m = p.matcher(input);
+        int counter = 0;
+        while(m.find()){
+            counter++;
+        }
+        return counter;
     }
 
     // Match all characters which are not immediately followed by that same character
     // Example: If string gooooo. The first g is not followed by a g
     // and last o is not followed by o
     public int negativeLookAhead(String input){
-        return 1;
+        Pattern p = Pattern.compile("(\\S)(?!\\1)");
+        Matcher m = p.matcher(input);
+        int counter = 0;
+        while(m.find()){
+            counter++;
+        }
+        return counter;
     }
 
     // Write a regex which can match all the
-    // occurences of digit which are immediately
+    // occurrences of digit which are immediately
     // preceded by odd digit.
     public int positiveLookBehind(String input){
-        return 1;
+        Pattern p = Pattern.compile("(?<=[13579])\\d");
+        Matcher m = p.matcher(input);
+        int counter = 0;
+        while(m.find()){
+            counter++;
+        }
+        return counter;
     }
 
     // Write a regex which can match all the occurrences of characters
     // which are not immediately preceded by vowels (a, e, i, u, o, A, E, I, O, U)
     public int negativeLookBehind(String input){
-        return 1;
+        Pattern p = Pattern.compile("((?<![aeiouAEIOU]).)");
+        Matcher m = p.matcher(input);
+        int counter = 0;
+        while(m.find()){
+            counter++;
+        }
+        return counter;
     }
 }
