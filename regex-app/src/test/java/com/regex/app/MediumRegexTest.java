@@ -24,4 +24,12 @@ public class MediumRegexTest {
         String actual1 = mediumRegex.detectLinksAndText(input1);
         assertEquals(expected1, actual1);
     }
+
+    @Test
+    public void subWordCount(){
+        assertEquals(mediumRegex.subWordCount("existing pessimist optimist this is", "is"), 3);
+        assertEquals(mediumRegex.subWordCount("rational professionalism uncontroversial on conventional", "on"), 5);
+        assertEquals(mediumRegex.subWordCount("don't tell me what is on", "on"), 0);
+        assertEquals(mediumRegex.subWordCount("I wish for a fish in a dish. Hiss kiss disc diss.", "is"), 7);
+    }
 }
