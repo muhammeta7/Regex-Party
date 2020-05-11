@@ -312,4 +312,12 @@ public class RegexTest {
         assertEquals(input3, 5);
         assertEquals(input4, 1);
     }
+
+    @Test
+    public void specificStringTest(){
+        assertTrue(regex.specificString("So hackerrank is fun"));
+        assertTrue(regex.specificString("omg hackerrank fo life"));
+        assertFalse(regex.specificString("This doesn't contain the word"));
+        assertFalse(regex.specificString("Wow another one without the word."));
+    }
 }

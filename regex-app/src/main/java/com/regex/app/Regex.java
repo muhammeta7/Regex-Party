@@ -209,4 +209,9 @@ public class Regex {
         }
         return counter;
     }
+
+    // Match specific string hackerrank. This is is case sensitive
+    public boolean specificString(String input){
+        return true;
+    }
 }

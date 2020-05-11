@@ -32,4 +32,5 @@ public class MediumRegexTest {
         assertEquals(mediumRegex.subWordCount("don't tell me what is on", "on"), 0);
         assertEquals(mediumRegex.subWordCount("I wish for a fish in a dish. Hiss kiss disc diss.", "is"), 7);
     }
+
 }
