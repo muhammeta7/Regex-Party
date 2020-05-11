@@ -209,4 +209,9 @@ public class Regex {
         }
         return counter;
     }
+
+    // Your task is to match the string "hackerrank". This is case sensitive
+    public boolean specificString(String input){
+        return input.matches("\\bhackerrank\\b");
+    }
 }
