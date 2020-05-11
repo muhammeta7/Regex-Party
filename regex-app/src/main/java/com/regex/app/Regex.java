@@ -210,8 +210,8 @@ public class Regex {
         return counter;
     }
 
-    // Match specific string hackerrank. This is is case sensitive
-    public boolean specificString(String input){
-        return true;
+    // Return count of hackerrank in a string. This is is case sensitive
+    public int specificString(String input){
+        return 1;
     }
 }
