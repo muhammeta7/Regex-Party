@@ -25,4 +25,13 @@ public class MediumRegex {
         return 0;
     }
 
+    // It must begin with either an underscore or a period
+    // The first character must be immediately followed by one or more digits in the range 0-9
+    // After some number of digits, there must be 0 or more English letters (uppercase and/or lowercase).
+    // It may be terminated with an optional _
+    // Note that if it's not terminated with an underscore,
+    // then there should be no characters after the sequence of 0 or more English letters.
+    public boolean alienUserName(String input){
+        return input.matches("username here");
+    }
 }

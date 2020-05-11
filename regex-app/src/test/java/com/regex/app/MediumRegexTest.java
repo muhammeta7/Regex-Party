@@ -33,4 +33,11 @@ public class MediumRegexTest {
         assertEquals(mediumRegex.subWordCount("I wish for a fish in a dish. Hiss kiss disc diss.", "is"), 7);
     }
 
+    @Test
+    public void alienUserNameTest(){
+        assertTrue(mediumRegex.alienUserName("_0898989811abced_"));
+        assertTrue(mediumRegex.alienUserName(".551001777yBnuSHKYiHVZXRfmU_"));
+        assertFalse(mediumRegex.alienUserName("_abce"));
+        assertFalse(mediumRegex.alienUserName("_09090909abcD0"));
+    }
 }
