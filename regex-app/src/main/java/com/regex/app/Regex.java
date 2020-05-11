@@ -211,7 +211,13 @@ public class Regex {
     }
 
     // Your task is to match the string "hackerrank". This is case sensitive
-    public boolean specificString(String input){
-        return input.matches("\\bhackerrank\\b");
+    public int specificString(String input){
+        Pattern p = Pattern.compile("\\bhackerrank\\b");
+        Matcher m = p.matcher(input);
+        int count = 0;
+        while(m.find()){
+            count++;
+        }
+        return count;
     }
 }

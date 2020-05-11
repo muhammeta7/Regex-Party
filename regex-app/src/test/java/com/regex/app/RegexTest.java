@@ -315,9 +315,8 @@ public class RegexTest {
 
     @Test
     public void specificStringTest(){
-        assertTrue(regex.specificString("So hackerrank is fun"));
-        assertTrue(regex.specificString("omg hackerrank fo life"));
-        assertFalse(regex.specificString("This doesn't contain the word"));
-        assertFalse(regex.specificString("Wow another one without the word."));
+        assertEquals(regex.specificString("So hackerrank is fun and hackerrank"), 2);
+        assertEquals(regex.specificString("omg hackerrank fo life"), 1);
+        assertEquals(regex.specificString("This doesn't contain the word"), 0);
     }
 }
