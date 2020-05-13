@@ -211,6 +211,7 @@ public class Regex {
     }
 
     // Your task is to match the string "hackerrank". This is case sensitive
+    // Return count of hackerrank in a string. This is is case sensitive
     public int specificString(String input){
         Pattern p = Pattern.compile("\\bhackerrank\\b");
         Matcher m = p.matcher(input);

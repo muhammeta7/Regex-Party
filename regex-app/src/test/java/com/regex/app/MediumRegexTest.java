@@ -34,6 +34,14 @@ public class MediumRegexTest {
     }
 
     @Test
+    public void alienUserNameTest(){
+        assertTrue(mediumRegex.alienUserName("_0898989811abced_"));
+        assertTrue(mediumRegex.alienUserName(".551001777yBnuSHKYiHVZXRfmU_"));
+        assertFalse(mediumRegex.alienUserName("_abce"));
+        assertFalse(mediumRegex.alienUserName("_09090909abcD0"));
+    }
+
+    @Test
     public void printFrownCountTest(){
         String input1 = ":~( Someone I know :o) recently combined Maple Syrup :'D & buttered Popcorn 8~C thinking it would taste like caramel popcorn >;'@. It didn’t :-< and they don’t recommend anyone ;{ else do it either :o@ :o3";
         String input2 = "Uhm hey no frowns in this one";
