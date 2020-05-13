@@ -8,25 +8,25 @@ public class Regex {
     // Match only and exactly strings of form: abc.def.ghi.jkx,
     // where each variable a,b,c,d,e,f,g,h,i,j,k,x can be any single character except the newline.
     public boolean matchAnyButNewLine(String input){
-        return input.matches("insert pattern here");
+        return input.matches("\\S{3}\\.\\S{3}\\.\\S{3}\\.\\S{3}");
     }
 
     // Match the pattern xxXxxXxxxx
     // Here x denotes a digit character, and X denotes a non-digit character.
     public boolean matchDigitsAndNonDigits(String input){
-        return input.matches("insert pattern here");
+        return input.matches("\\d{2}\\D\\d{2}\\D\\d{4}");
     }
 
     // Match the pattern XXxXXxXX
     // Here, x denotes whitespace characters, and X denotes non-white space characters.
     public boolean whiteSpace(String input){
-        return input.matches("insert pattern here");
+        return input.matches("\\S{2}\\s\\S{2}\\s\\S{2}");
     }
 
     // Match the pattern xxxXxxxxxxxxxxXxxx.
     // x denotes any word character and X denotes any non-word character
     public boolean matchingWord(String input){
-        return input.matches("insert pattern here");
+        return input.matches("\\w{3}\\W\\w{10}\\W\\w{3}");
     }
 
     // Match the pattern Xxxxx.
@@ -34,7 +34,7 @@ public class Regex {
     // String must start with a digit X and end with a .
     // String should be only 6 characters long.
     public boolean startAndEnd(String input){
-        return input.matches("insert pattern here");
+        return input.matches("^\\d\\w{4}\\.$");
     }
 
     // Match the pattern with following criteria.
@@ -43,7 +43,7 @@ public class Regex {
     // Third character is x,s,0. Fourth character is 3,0,A or a
     // Fifth character x,s,u. Sixth character . or ,
     public boolean matchSpecificCharacters(String input){
-        return input.matches("insert pattern here");
+        return input.matches("[123][120][xs0][aA30][xsu][.,]$");
     }
 
     // Match pattern with following criteria.
@@ -55,7 +55,7 @@ public class Regex {
     // Fifth character should not be A,E,I,O,U
     // Sixth character should not be a . or a ,
     public boolean excludeSpecificCharacters(String input){
-        return input.matches("insert pattern here");
+        return input.matches("[^\\d][^aeiou][^bcDF][^\\s][^AEIOU][^.,]");
     }
 
     // Match pattern with following criteria.
@@ -67,7 +67,7 @@ public class Regex {
     // Fourth character not be uppercase
     // Fifth character must be uppercase English character
     public boolean ranges(String input){
-        return input.matches("insert pattern here");
+        return input.matches("[a-z][1-9][A-Z][a-z][A-Z]");
     }
 
     // Pattern must have length of 10.
@@ -75,48 +75,48 @@ public class Regex {
     // Or Even digits (Zero counts as even in this case)
     // Last 4 characters can be either odd digits (1 counts) or whitespace characters
     public boolean repetitions(String input){
-        return input.matches("insert pattern here");
+        return input.matches("[A-Za-z02468]{6}[13579\\s]{4}");
     }
 
     // Pattern should begin with 1 or 2 digits
     // After that should have 3 or more letters (case insensitive)
     // Should end with 0-3 . (periods)
     public boolean rangeRepetitions(String input){
-        return input.matches("insert pattern here");
+        return input.matches("\\d{1,2}[a-zA-Z]{3,}\\.{0,3}");
     }
 
     // Pattern should begin with 2 or more digits
     // After that string should have 0 or more lowercase letters
     // Should end with 0 or more uppercase letters
     public boolean zeroOrMore(String input){
-        return input.matches("insert pattern here");
+        return input.matches("\\d{2,}[a-z]*[A-Z]*");
     }
 
     // Pattern should begin with 1 or more digits
     // After that should have 1 or more uppercase letters
     // Should end with one or more lowercase letters
     public boolean oneOrMore(String input){
-        return input.matches("insert pattern here");
+        return input.matches("\\d+[A-Z]+[a-z]*");
     }
 
     // String should only contain upper and lowercase letters
     // String should end in s
     public boolean endsWith(String input){
-        return input.matches("insert pattern here");
+        return input.matches("[a-zA-Z]+s$");
     }
 
     // String should match word starting with vowel(case insensitive)
     // Can be any length. Word should consist of only letters (case insensitive)
     // Should start and end with word boundary
     public boolean wordBoundary(String input){
-        Pattern p = Pattern.compile("insert pattern here");
+        Pattern p = Pattern.compile("\\b[aeiouAEIOU][A-Za-z]*\\b");
         Matcher m = p.matcher(input);
         return m.find();
     }
 
     // Match for 3 consecutive repetitions of ok (okokok)
     public boolean capturingGroup(String pattern){
-        Pattern p = Pattern.compile("insert pattern here");
+        Pattern p = Pattern.compile("(okokok).*");
         Matcher m = p.matcher(pattern);
         return m.find();
     }
@@ -124,7 +124,7 @@ public class Regex {
     // Match s must start with Mr. Mrs. Ms. Dr. or Er.
     // Rest of string must contain only one or more alphabetic letters (upper and lowercase)
     public boolean alternativeMatching(String input){
-        Pattern p = Pattern.compile("insert pattern here");
+        Pattern p = Pattern.compile("^(Mr\\.|Mrs\\.|Ms\\.|Dr\\.|Er\\.)[a-zA-Z]+$");
         Matcher m = p.matcher(input);
         return m.find();
     }
@@ -138,7 +138,7 @@ public class Regex {
     // 11th should match 1st. 12th should match 2nd
     // 13th should match 3rd. 14th 4th...you get the point
     public boolean matchSameText(String input){
-        Pattern p = Pattern.compile("insert pattern here");
+        Pattern p = Pattern.compile("([a-z]\\w\\s\\W\\d\\D[A-Z][a-zA-Z][aieouAEIOU]\\S)\\1");
         Matcher m = p.matcher(input);
         return m.find();
     }
@@ -147,7 +147,7 @@ public class Regex {
     // Must have "-" separator such that string is divided in 4 parts
     // Each part having exactly two digits 12-34-56-78
     public boolean backReferences(String input){
-        Pattern p = Pattern.compile("insert pattern here");
+        Pattern p = Pattern.compile("^\\d{2}(-?)(\\d{2}\\1){2}\\d{2}$");
         Matcher m = p.matcher(input);
         return m.find();
     }
@@ -156,14 +156,14 @@ public class Regex {
     // tic should not be immediate neighbor of itself
     // tic must occur only when tac has appeared at least twice before
     public boolean forwardReference(String input){
-        Pattern p = Pattern.compile("insert pattern here");
+        Pattern p = Pattern.compile("^(\\2tic|(tac))*$");
         Matcher m = p.matcher(input);
         return m.find();
     }
 
     // Return number of occurrences of o followed immediately by oo
     public int positiveLookAhead(String input){
-        Pattern p = Pattern.compile("insert pattern here");
+        Pattern p = Pattern.compile("o(?=oo)");
         Matcher m = p.matcher(input);
         int counter = 0;
         while(m.find()){
@@ -176,7 +176,7 @@ public class Regex {
     // Example: If string gooooo. The first g is not followed by a g
     // and last o is not followed by o
     public int negativeLookAhead(String input){
-        Pattern p = Pattern.compile("insert pattern here");
+        Pattern p = Pattern.compile("(\\S)(?!\\1)");
         Matcher m = p.matcher(input);
         int counter = 0;
         while(m.find()){
@@ -189,7 +189,7 @@ public class Regex {
     // occurrences of digit which are immediately
     // preceded by odd digit.
     public int positiveLookBehind(String input){
-        Pattern p = Pattern.compile("insert pattern here");
+        Pattern p = Pattern.compile("(?<=[13579])\\d");
         Matcher m = p.matcher(input);
         int counter = 0;
         while(m.find()){
@@ -201,7 +201,7 @@ public class Regex {
     // Write a regex which can match all the occurrences of characters
     // which are not immediately preceded by vowels (a, e, i, u, o, A, E, I, O, U)
     public int negativeLookBehind(String input){
-        Pattern p = Pattern.compile("insert pattern here");
+        Pattern p = Pattern.compile("((?<![aeiouAEIOU]).)");
         Matcher m = p.matcher(input);
         int counter = 0;
         while(m.find()){
@@ -210,8 +210,15 @@ public class Regex {
         return counter;
     }
 
+    // Your task is to match the string "hackerrank". This is case sensitive
     // Return count of hackerrank in a string. This is is case sensitive
     public int specificString(String input){
-        return 1;
+        Pattern p = Pattern.compile("\\bhackerrank\\b");
+        Matcher m = p.matcher(input);
+        int count = 0;
+        while(m.find()){
+            count++;
+        }
+        return count;
     }
 }

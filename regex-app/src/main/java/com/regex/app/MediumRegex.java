@@ -10,7 +10,18 @@ public class MediumRegex {
     // <a href="http://www.hackerrank.com"><h1><b>HackerRank</b></h1></a>
     // Format should return http://www.hackerrank.com, HackerRank
     public String detectLinksAndText(String input){
-        return input;
+        String regex = "<a href=\"([^\"]+)\"(?:[^>]*)?>(?:<[^>]+>)*([^<]*)(?:</[^>]+>)*</a>";
+        Pattern p = Pattern.compile(regex);
+        String result = "";
+        Matcher m = p.matcher(input);
+
+        while(m.find()){
+            String url = m.group(1);
+            String text = m.group(2);
+            result += url + "," + text;
+        }
+
+        return result;
     }
 
     // Given a sentence return the count of the subWord
@@ -22,7 +33,13 @@ public class MediumRegex {
     // subWord occurs in "this" but is followed by a space
     // subWord occurs at end of sentence but is preceded by space
     public int subWordCount(String sentence, String subWord){
-        return 0;
+        Pattern p = Pattern.compile("(?<=\\w)" + subWord + "(?=\\w)");
+        Matcher m = p.matcher(sentence);
+        int counter = 0;
+        while(m.find()){
+            counter++;
+        }
+        return counter;
     }
 
     // It must begin with either an underscore or a period
@@ -48,7 +65,14 @@ public class MediumRegex {
     // The distinguishing feature of a happy smiley face is a mouth marked with ), ], }, D, or 3.
     // Each smiley starts with eyebrows or eyes and ends with the mouth.
     public int printFrownCount(String input){
-        return 0;
+        int counter = 0;
+        String[] word = input.split(" ");
+        for(String s : word){
+            if(s.matches(".*[@<C{\\[ \\\\( ].*")){
+                counter++;
+            }
+        }
+        return counter;
     }
 
 }

@@ -219,7 +219,7 @@ public class RegexTest {
     @Test
     public void wordBoundaryTest(){
         assertTrue(regex.wordBoundary("Find any matches?"));
-        assertTrue(regex.wordBoundary("okyouwin? yes"));
+        assertTrue(regex.wordBoundary("okyouwin yes"));
         assertFalse(regex.wordBoundary("123 345 678"));
         assertFalse(regex.wordBoundary("?@ 123 b1234"));
     }
@@ -243,7 +243,7 @@ public class RegexTest {
     }
 
     @Test
-    public void matchSomeTextTest(){
+    public void matchSameTextTest(){
         assertTrue(regex.matchSameText("ab #1?AZa$ab #1?AZa$"));
         assertTrue(regex.matchSameText("af &3ABaekaf &3ABaek"));
         assertFalse(regex.matchSameText("Ac 34bAnekAc 34bAnek"));

@@ -8,6 +8,7 @@ The dot `.` matches anything (except for a newline).
 Note: If you want to match `.` in the test string, 
 you need to escape the dot by using a slash `\\.`
 
+
 #### Match Digits & Non-Digit Characters
 * The expression `\\d` matches any digit `0-9`
 * The expression `\\D` matches any character that is not a digit
@@ -111,7 +112,7 @@ from back reference to a capturing group that did not participate in the match a
     * o is matched with o and \\1 
 * `(b)?o\\1`
     * Here `(b)` fails to match at all. Since whole group is optional it does proceed to match o
-    * Enginer now arrives `\\1` which references a group that did not participate in match attempt at all
+    * Engine now arrives `\\1` which references a group that did not participate in match attempt at all
     * Thus backreference fails to match
     
 #### Forward References
