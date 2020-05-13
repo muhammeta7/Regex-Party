@@ -32,4 +32,16 @@ public class MediumRegexTest {
         assertEquals(mediumRegex.subWordCount("don't tell me what is on", "on"), 0);
         assertEquals(mediumRegex.subWordCount("I wish for a fish in a dish. Hiss kiss disc diss.", "is"), 7);
     }
+
+    @Test
+    public void printFrownCountTest(){
+        String input1 = ":~( Someone I know :o) recently combined Maple Syrup :'D & buttered Popcorn 8~C thinking it would taste like caramel popcorn >;'@. It didn’t :-< and they don’t recommend anyone ;{ else do it either :o@ :o3";
+        String input2 = "Uhm hey no frowns in this one";
+        String input3 = "8-C haha ;~) man so many >:o{.";
+        String input4 = "There :o[ ooo 8~@ :-<";
+        assertEquals(mediumRegex.printFrownCount(input1), 6);
+        assertEquals(mediumRegex.printFrownCount(input2), 0);
+        assertEquals(mediumRegex.printFrownCount(input3), 2);
+        assertEquals(mediumRegex.printFrownCount(input4), 3);
+    }
 }
