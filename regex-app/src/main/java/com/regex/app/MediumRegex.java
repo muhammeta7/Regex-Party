@@ -51,4 +51,5 @@ public class MediumRegex {
         return 0;
     }
 
+
 }
